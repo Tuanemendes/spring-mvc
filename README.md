@@ -1,9 +1,11 @@
-# spring-mvc
+######  Em construção... 
+
+# Spring-mvc
 No curso o projeto  mudi é uma plaicação web java com spring-mvc. Por ser conhcido no mercado peloa fato de se implemetar muita funções, como persistência de dados,injeção de dependência , seguinodo o padão de arquitetura MVC . 
 
 
 
-# 🗃️ configuração para conectar ao banco de dados 
+# 🗃️ Fonfiguração para conectar ao banco de dados 
 
 ```
 server.port = 8090
