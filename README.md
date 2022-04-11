@@ -3,6 +3,15 @@ Aula de Spring programação web
 
 
 
+# 🗃️ configuração para conectar ao banco de dados 
+
+server.port = 8090
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mariadb://127.0.0.1:3306/mudi
+spring.datasource.username=****
+spring.datasource.password=****
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+#spring.jpa.show-sql: true
 
 ## 🛠️ Ferramentas para o desenvolvimento
 
