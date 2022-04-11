@@ -5,7 +5,7 @@ No curso o projeto  mudi é uma plaicação web java com spring-mvc. Por ser con
 
 
 
-# 🗃️ Fonfiguração para conectar ao banco de dados 
+# 🗃️ Configuração para conectar ao banco de dados 
 
 ```
 server.port = 8090
