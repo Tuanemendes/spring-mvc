@@ -24,4 +24,14 @@ public class HomeController {
 		return "home";
 	}
 	
+//outra forma de definir um ModelooEPagina
+//	@GetMapping("/home")
+//	public ModelAndView home() {
+//	    List<Pedido> pedidos = repository.findAll();
+//	    ModelAndView mv = new ModelAndView("home");
+//	    mv.addObject("pedidos", pedidos);
+//	    return mv; 
+//	}   
+	
+	
 }
