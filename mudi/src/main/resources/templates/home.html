@@ -12,16 +12,16 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 							<li class="nav-item">
-								<a class="nav-link active" href="#">Todos</a>
+								<a th:classappend="${status} == null ? 'active'" class="nav-link " href="/home">Todos</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link " href="">Cadastrados</a>
+								<a th:classappend="${status} == 'aguardando' ? 'active'" class="nav-link " href="/home/aguardando">Cadastrados</a>
 							</li>
 							<li class="nav-item">	
-								<a class="nav-link " href="">Aprovados</a>
+								<a  th:classappend="${status} == 'aprovado' ? 'active'"class="nav-link " href="/home/aprovado">Aprovados</a>
 							</li>
 							<li class="nav-item">	
-								<a class="nav-link " href="">Entrega</a>
+								<a th:classappend="${status} == 'entregue' ? 'active'" class="nav-link " href="/home/entregue">Entrega</a>
 							</li>
 						</ul>		
 					</div>	
@@ -41,8 +41,8 @@
 					<div class="row">
 						<div class="col-12 col-sm-8 mb-3">
 							<div class="row">					
-								<div class="col-md-5">Valor:<span th:text="${pedido.valorNegociado}">300,99</span></div>
-								<div class="col-md-7">Data de entrega: <span th:text="${pedido.dataDaEntrega}">10/05/2022</span> </div>
+								<div class="col-md-5">Valor: <span th:if="${pedido.valorNegociado} != null"  th:text="${ 'R$ ' + #numbers.formatDecimal(pedido.valorNegociado,3,'POINT',2,'COMMA')}">300,99</span></div>
+								<div class="col-md-7">Data de entrega: <span th:text="${#temporals.format(pedido.dataDaEntrega, 'dd/MM/yyyy')}">10/05/2022</span> </div>
 							</div>	
 							<div>Produto</div>
 							<div> <input class="form-control" th:value="${pedido.urlProduto}" value= "Url do produto"/></div>
