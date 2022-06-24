@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
+
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -24,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 				.anyRequest().authenticated()
 			.and()
-			.formLogin(form -> form .loginPage("/login").defaultSuccessUrl("/home",true).permitAll()
+			.formLogin(form -> form .loginPage("/login").defaultSuccessUrl("/usuario/pedido",true).permitAll()
 			)
 			.logout(logout-> logout.logoutUrl("/logout")).csrf().disable();
 	}
@@ -32,16 +34,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		
-//criar usuario em mémoria 		
+// inserir usuario no banco 
 //		UserDetails user =
 //				 User.builder()
-//					.username("teste")
+//					.username("tuane")
 //					.password(encoder.encode("1234"))
 //					.roles("ADM")
 //					.build();
-//		
-//		
+		
 		auth.jdbcAuthentication()
 			.dataSource(dataSource)
 			.passwordEncoder(encoder);
@@ -49,6 +49,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 	
+//	//login de usuario mais basica 
+//	@Bean
+//	@Override
+//	public UserDetailsService userDetailsService() {
+//		UserDetails user =
+//			 User.withDefaultPasswordEncoder()
+//				.username("test")
+//				.password("test")
+//				.roles("ADM")
+//				.build();
+//
+//		return new InMemoryUserDetailsManager(user);
+//	}
 	
 
 }
