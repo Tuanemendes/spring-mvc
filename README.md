@@ -34,7 +34,7 @@ create unique index ix_auth_username on authorities (username,authority);
 
 ## 🛠️ Ferramentas para o desenvolvimento
 
- * [Java 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html) - JDK instalado na maquina a JDK.
+ * [Java 11](https://www.oracle.com/br/java/technologies/javase/jdk11-archive-downloads.html) - JDK instalado na maquina.
  * [Eclipse](https://www.eclipse.org/downloads/) - IDE utilizada.
  * [Dbeaver](https://dbeaver.io/download/) - Visualisar o banco de dados.
  * [Docker](https://docs.docker.com/desktop/windows/install/) - Docker utilização da imagem do Banco MariaDB.
