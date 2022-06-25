@@ -19,7 +19,7 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 ### Imagem docker mariadb
 
 ```
-docker run -p 3306:3306 --name mariadb -e MARIADB_ROOT_PASSWORD=root -d mariadb
+docker run -p 3306:3306 --name mariadb -e MARIADB_ROOT_PASSWORD=**** -d mariadb
 ```
 ### Criação de tabela para autenticação 
 ```
