@@ -1,7 +1,9 @@
 ######  Em construção... 
 
 # Spring-mvc
-No curso o projeto  mudi é uma plaicação web java com spring-mvc. Por ser conhcido no mercado peloa fato de se implemetar muita funções, como persistência de dados,injeção de dependência , seguinodo o padão de arquitetura MVC . 
+No curso o projeto  mudi é uma aplicação web java com spring-mvc. Por ser conhecido no mercado o spring visa dar a agilidade na costrução de projetos  como persistência de dados,injeção de dependência , seguindo o padão de arquitetura MVC , por meio de anotações o que já são configuradas pra se precupar com a regra de négocio. 
+Para o front-end esta sendo utilizado o framework bootstrap pra dar agilida já que possui componentes web prontos. 
+
 
 
 
