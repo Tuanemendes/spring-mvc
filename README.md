@@ -16,8 +16,12 @@ spring.datasource.password=****
 spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 #spring.jpa.show-sql: true
 ```
+### Imagem docker mariadb
 
-# Criação de tabela para autenticação 
+```
+docker run -p 3306:3306 --name mariadb -e MARIADB_ROOT_PASSWORD=root -d mariadb
+```
+### Criação de tabela para autenticação 
 ```
 create table authorities (
 	username varchar(50) not null,
