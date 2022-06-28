@@ -33,7 +33,7 @@
 		</span>
 		
 	</div>
-	<div class="row " sec:authorize="isAuthenticated()">
+	<div sec:authorize="isAuthenticated()">
 		<div class="col">
 			<nav class="nav">
 			  <a class="nav-link" th:href="@{/home}">Home</a>

@@ -13,12 +13,8 @@
 				<div class="row">
 					<div class="col-12 col-sm-8 mb-3">
 						<div class="row">
-							<div class="col-md-5">
-								Valor: <input />
-							</div>
-							<div class="col-md-7">
-								Data de entrega:<input />
-							</div>
+							<div class="col-md-5">Valor: <input /></div>
+							<div class="col-md-5">Data de entrega:<input /></div>
 						</div>
 						<div>Produto</div>
 						<div>
@@ -43,53 +39,19 @@
 		function onLoad() {
 			var app = new Vue(
 					{
-						el : '#ofertas',
-						data : {
-							pedidos : [
-									{
-										"id" : 12,
-										"nomeProduto" : "Redragon HEADSET",
-										"valorNegociado" : null,
-										"dataDaEntrega" : null,
-										"urlProduto" : "https://www.amazon.com.br/Redragon-HEADSET-GAMER-HERO-PRETO/dp/B09XWJWMS1?ref_=Oct_DLandingS_D_013b1215_62&smid=A1ZZFT5FULY4LN",
-										"urlImagem" : "https://m.media-amazon.com/images/I/31sf8Y8jqrL._AC_US200_.jpg",
-										"descricao" : "Redragon HEADSET GAMER HERO PRETO RGB",
-										"status" : "AGUARDANDO"
-									},
-									{
-										"id" : 11,
-										"nomeProduto" : "SSD",
-										"valorNegociado" : null,
-										"dataDaEntrega" : null,
-										"urlProduto" : "https://www.amazon.com.br/dp/B01N5IB20Q/ref=s9_acsd_hps_bw_c2_x_0_i?pf_rd_m=A3RN7G7QC5MWSZ&pf_rd_s=merchandised-search-15&pf_rd_r=VVFSPG42KEP6ZXEM7Z5G&pf_rd_t=101&pf_rd_p=9c11e642-33b4-4506-92c0-d18c5ef9188e&pf_rd_i=17368183011",
-										"urlImagem" : "https://m.media-amazon.com/images/I/41UKoJx2tZL._AC_US200_.jpg",
-										"descricao" : "SSD A400, Kingston, SA400S37/240G, Preto",
-										"status" : "AGUARDANDO"
-									},
-									{
-										"id" : 10,
-										"nomeProduto" : "Garmin SMARTWATCH",
-										"valorNegociado" : null,
-										"dataDaEntrega" : null,
-										"urlProduto" : "https://www.amazon.com.br/dp/B07QLVHBLF/ref=s9_acsd_hps_bw_c2_x_0_t?pf_rd_m=A3RN7G7QC5MWSZ&pf_rd_s=merchandised-search-13&pf_rd_r=VVFSPG42KEP6ZXEM7Z5G&pf_rd_t=101&pf_rd_p=33f64193-f115-4504-b890-2fe3e90f385a&pf_rd_i=17368183011",
-										"urlImagem" : "https://m.media-amazon.com/images/I/41jjZZVeogL._AC_US200_.jpg",
-										"descricao" : "Garmin SMARTWATCH FORERUNNER 245 MUSIC, preto",
-										"status" : "AGUARDANDO"
-									},
-									{
-										"id" : 9,
-										"nomeProduto" : "Fone de Ouvido JBL",
-										"valorNegociado" : null,
-										"dataDaEntrega" : null,
-										"urlProduto" : "https://www.amazon.com.br/dp/B01MG62Z5M/ref=s9_acsd_hps_bw_c2_x_3_i?pf_rd_m=A3RN7G7QC5MWSZ&pf_rd_s=merchandised-search-5&pf_rd_r=VVFSPG42KEP6ZXEM7Z5G&pf_rd_t=101&pf_rd_p=a9bedf86-00ea-4a29-8282-37a4c5b380db&pf_rd_i=17368183011",
-										"urlImagem" : "https://m.media-amazon.com/images/I/7160q6CR0oL._AC_SX679_.jpg",
-										"descricao" : "Fone de Ouvido JBL Tune 110 Intra-Auricular Preto - ‎JBLT110BLK",
-										"status" : "AGUARDANDO"
-									} ]
-						}
-					});
+				el : '#ofertas',
+				data : {
+					pedidos : []
+				},
+				mounted(){
+				    axios
+				      .get('http://localhost:8090/api/pedidos/aguardando')
+				      .then(response => (this.pedidos = response.data))
+				}
+			});
 		}
 	</script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

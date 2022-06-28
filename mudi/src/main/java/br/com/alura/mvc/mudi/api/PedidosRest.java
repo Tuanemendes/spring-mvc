@@ -27,4 +27,5 @@ public class PedidosRest {
 
         return pedidoRepository.findByStatus(StatusPedido.AGUARDANDO, paginacao);
     }
+   
 }
